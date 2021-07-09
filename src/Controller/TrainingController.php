@@ -17,7 +17,7 @@ class TrainingController extends ControllerBase {
    *
    * This callback is mapped to the path : /controller.
    */
-  public function render(Request $request) {
+  public function render() {
     return [
       '#markup' => 'Hello world \o/',
     ];
@@ -55,8 +55,10 @@ class TrainingController extends ControllerBase {
       throw new AccessDeniedHttpException();
     }
 
-    $list[] = $this->t("Foo number was @number.", ['@number' => $foo]);
-    $list[] = $this->t("Bar string was @string.", ['@string' => $bar]);
+    $list = [
+      $this->t("Foo number was @number.", ['@number' => $foo]),
+      $this->t("Bar string was @string.", ['@string' => $bar]),
+    ];
 
     return [
       // The theme function to apply to the #items.
@@ -78,8 +80,6 @@ class TrainingController extends ControllerBase {
   public function renderAccountInterface(AccountInterface $user) {
     return [
       '#markup' => $user->getAccountName(),
-      '#prefix' => '<p>',
-      '#suffix' => '</p>',
     ];
   }
 
@@ -94,8 +94,6 @@ class TrainingController extends ControllerBase {
   public function renderNodeInterface(NodeInterface $node) {
     return [
       '#markup' => $node->getTitle(),
-      '#prefix' => '<p>',
-      '#suffix' => '</p>',
     ];
   }
 

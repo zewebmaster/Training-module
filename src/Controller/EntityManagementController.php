@@ -63,11 +63,11 @@ class EntityManagementController extends ControllerBase {
     // @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21FieldItemListInterface.php/interface/FieldItemListInterface/9.x
     \dump($entity->field_id->value);
     \dump($entity->get('field_id')->value);
-    \dump($entity->get('field_id')->first()->getValue());
+    \dump($entity->get('field_id')->getValue());
 
-    \dump('-----------------------------------------------');
-    \dump('##           ENTITY REFERENCE FIED           ##');
-    \dump('-----------------------------------------------');
+    \dump('------------------------------------------------');
+    \dump('##           ENTITY REFERENCE FIELD           ##');
+    \dump('------------------------------------------------');
 
     // EntityReferenceFieldItemListInterface interface.
     // @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21EntityReferenceFieldItemListInterface.php/interface/EntityReferenceFieldItemListInterface/9.x
@@ -84,11 +84,11 @@ class EntityManagementController extends ControllerBase {
     // You get the first reference.
     \dump($entity->get('field_types')->target_id);
 
-    \dump('-- Using getters');
+    \dump('-- Using interface');
     // You get all the references.
     \dump($entity->get('field_types')->getValue());
     // You get the first reference.
-    \dump($entity->get('field_types')->first()->getValue);
+    \dump($entity->get('field_types')->first()->getValue());
     // You get the first reference.
     \dump($entity->get('field_types')->getString());
     // You get all the entities.

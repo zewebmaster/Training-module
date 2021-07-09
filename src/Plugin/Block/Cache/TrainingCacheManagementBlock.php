@@ -65,8 +65,12 @@ class TrainingCacheManagementBlock extends BlockBase implements ContainerFactory
       return [
         '#markup' => $node->getTitle(),
         '#cache' => [
-          'tags' => ['node:' . $node->id()],
-          'contexts' => ['url.path'],
+          'tags' => [
+            'node:' . $node->id(),
+          ],
+          'contexts' => [
+            'url.path',
+          ],
         ],
       ];
     }
