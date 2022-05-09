@@ -21,14 +21,16 @@ class EntityManagementController extends ControllerBase {
     // $entity_type_id = 'block_content';
     // $entity_type_id = 'user';
     // $entity_type_id = 'contact_message';
+
+
     $entity_type_id = 'node';
     // Set the nid of an pokemon.
-    $nid = 1;
+    $nid = 17;
     $node_storage_interface = $this->entityTypeManager()->getStorage($entity_type_id);
     $entity = $node_storage_interface->load($nid);
 
     \dump('----------------------------------------------');
-    \dump('##             DUMP FULL ENTITY             ##');
+    \dump('##             DUMP FULL ENTITY             ##');
     \dump('----------------------------------------------');
     \dump($entity);
 
@@ -60,10 +62,12 @@ class EntityManagementController extends ControllerBase {
     // Use the magic method __get() for getting object properties.
     // @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21FieldItemList.php/class/FieldItemList/9.x
     // You can use the FieldItemListInterface for getting the field item object.
-    // @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21FieldItemListInterface.php/interface/FieldItemListInterface/9.x
-    \dump($entity->field_id->value);
-    \dump($entity->get('field_id')->value);
-    \dump($entity->get('field_id')->getValue());
+    // @see
+    // https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21FieldItemListInterface.php/interface/FieldItemListInterface/9.x
+
+    // \dump($entity->field_id->value);
+    // \dump($entity->get('field_id')->value);
+    // \dump($entity->get('field_id')->first()->getValue());
 
     \dump('------------------------------------------------');
     \dump('##           ENTITY REFERENCE FIELD           ##');
@@ -71,12 +75,7 @@ class EntityManagementController extends ControllerBase {
 
     // EntityReferenceFieldItemListInterface interface.
     // @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Field%21EntityReferenceFieldItemListInterface.php/interface/EntityReferenceFieldItemListInterface/9.x
-    \dump('1/ FIELD FILE');
-    \dump('----------------------------------------------');
 
-    \dump('----------------------------------------------');
-    \dump('2/ TAXONOMY REFERENCE FIELD');
-    \dump('----------------------------------------------');
     // Due to cardinality configuration, the field contains several references.
     \dump('-- Using magic method');
     // You get the first reference.
@@ -84,7 +83,7 @@ class EntityManagementController extends ControllerBase {
     // You get the first reference.
     \dump($entity->get('field_types')->target_id);
 
-    \dump('-- Using interface');
+    \dump('-- Using getters');
     // You get all the references.
     \dump($entity->get('field_types')->getValue());
     // You get the first reference.

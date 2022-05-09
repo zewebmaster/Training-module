@@ -23,7 +23,7 @@ training_module.request:
   path: '/controller/request'
   defaults:
     _controller: \Drupal\training_module\Controller\TrainingController::request
-    _title: 'A page managing parameters'
+    _title: 'A page using the request'
   requirements:
     _permission: 'access content'
 # Page using arguments.
@@ -141,7 +141,7 @@ training_module.multistep_two:
   requirements:
     _permission: 'access content'
 # Redirection Controller using request manager.
-training_module.redirection_using_rm:
+training_module.redirection_using_qp:
   path: '/form/request-manager-redirection'
   defaults:
     _controller: \Drupal\training_module\Controller\TrainingFormController::formRedirectUsingRequestManager

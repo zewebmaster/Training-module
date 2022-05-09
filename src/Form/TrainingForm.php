@@ -102,7 +102,7 @@ class TrainingForm extends FormBase {
     $parameters = [
       'input' => $form_state->getValue('input_text'),
     ];
-    $form_state->setRedirect('training_module.redirection_using_rm', $parameters);
+    $form_state->setRedirect('training_module.redirection_using_qp', $parameters);
 
     // Using tempStore.
     $this->store->set('input', $form_state->getValue('input_text'));

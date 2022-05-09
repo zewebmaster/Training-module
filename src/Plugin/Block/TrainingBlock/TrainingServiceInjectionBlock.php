@@ -11,8 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Training Block using service injection.
  *
  * @Block(
- *  id = "training_block_using_service",
- *  admin_label = @Translation("Custom block using services"),
+ *  id = "training_block_service",
+ *  admin_label = @Translation("Custom block using services injection"),
  *  category = @Translation("Training module"),
  * )
  */
@@ -49,7 +49,6 @@ class TrainingServiceInjectionBlock extends BlockBase implements ContainerFactor
    * {@inheritdoc}
    */
   public function build() {
-
     return [
       '#markup' => $this->routeMatch->getRouteName(),
     ];

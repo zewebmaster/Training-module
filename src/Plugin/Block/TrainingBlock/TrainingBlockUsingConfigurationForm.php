@@ -10,12 +10,12 @@ use Drupal\Core\Form\FormStateInterface;
  * Training block with configuration form.
  *
  * @Block(
- *  id = "training_block_with_config_form",
- *  admin_label = @Translation("Training block with configuration form"),
+ *  id = "training_block_config_form",
+ *  admin_label = @Translation("Training block using a configuration form"),
  *  category = @Translation("Training module"),
  * )
  */
-class TrainingBlockWithConfigurationForm extends BlockBase implements BlockPluginInterface {
+class TrainingBlockUsingConfigurationForm extends BlockBase implements BlockPluginInterface {
 
   /**
    * {@inheritdoc}

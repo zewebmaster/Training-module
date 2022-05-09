@@ -57,7 +57,6 @@ class TrainingCacheBaseBlock extends BlockBase implements ContainerFactoryPlugin
    * {@inheritdoc}
    */
   public function build() {
-
     if ($this->routeMatch->getRouteName() === 'entity.node.canonical') {
       $node = $this->routeMatch->getParameter('node');
       return [
